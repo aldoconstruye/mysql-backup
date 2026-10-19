@@ -20,6 +20,10 @@ echo "📂 Backup local: $LOCAL_BACKUP_DIR"
 # 3️⃣ Dump MySQL
 # ============================
 # shellcheck disable=SC2086
+echo "🔎 Verificando conexión y versión del servidor"
+
+mysql --version
+
 mydumper --version
 
 mydumper \
@@ -28,8 +32,9 @@ mydumper \
   --password "$MYSQL_PASSWORD" \
   --port "$MYSQL_PORT" \
   --database "$MYSQL_DATABASE" \
-  -C -c --clear \
-  -o "$LOCAL_BACKUP_DIR"
+  --threads 2 \
+  --verbose 3 \
+  --outputdir "$LOCAL_BACKUP_DIR"
 
 echo "✅ Dump completado"
 
