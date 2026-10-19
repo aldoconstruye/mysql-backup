@@ -20,6 +20,8 @@ echo "📂 Backup local: $LOCAL_BACKUP_DIR"
 # 3️⃣ Dump MySQL
 # ============================
 # shellcheck disable=SC2086
+mydumper --version
+
 mydumper \
   --host "$MYSQL_HOST" \
   --user "$MYSQL_USER" \
