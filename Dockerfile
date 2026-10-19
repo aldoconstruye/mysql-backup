@@ -2,7 +2,7 @@
 
 FROM rclone/rclone:1.72.0 as rclone
 
-FROM mydumper/mydumper:v0.21.2-2
+FROM mydumper/mydumper:v1.0.1-1
 
 COPY --from=rclone /usr/local/bin/rclone /usr/local/bin/rclone
 
