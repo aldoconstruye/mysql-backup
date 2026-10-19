@@ -20,9 +20,6 @@ echo "📂 Backup local: $LOCAL_BACKUP_DIR"
 # 3️⃣ Dump MySQL
 # ============================
 # shellcheck disable=SC2086
-echo "🔎 Verificando conexión y versión del servidor"
-
-mysql --version
 
 mydumper --version
 
